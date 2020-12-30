@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap'); */
+
+*{
+    outline: none;
+}
+body{
+    padding: 5rem 0;
+    background: linear-gradient(125deg, white, grey 100%);
+    min-height: 80vh;
+}
+.container{
+    width: 540px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(125deg, white, lightgrey 100%);
+    padding: 2rem 1rem;
+    border-radius: 35px;
+    box-shadow: 0px 10px 30px 0px grey;
+}
+p{
+    font-family: 'Redressed', cursive;
+    /* font-family: 'Waiting for the Sunrise', cursive; */
+    font-size: 2.5em;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+form input{
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 1rem;
+    border: 2px solid black;
+    font-size: 1.3rem;
+    transition: 0.7s;
+}
+form input::placeholder{
+    color: orange;
+}
+form input:focus{
+    border: 3px solid orange;
+}
+ul {
+    text-align: left;
+}
+ul li {
+    list-style: none;
+    padding: 0.7rem;
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+ul li:before {
+      content: "➺";
+    /* content: "✽"; */
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    color:orange;
+}
+ul li:after {
+    opacity: 0;
+}
+ul li:hover:after {
+    content: " (terminé)";
+    opacity: 0;
+    font-size: 1.1rem;
+    color:orange;
+    font-style: italic;
+    animation: pseudoClassAnim 1s forwards;
+}
+ul .checked:before {
+    content: "✔";
+    padding: 10px 10px;
+    font-size: 1.1rem;
+    color:orange;
+}
+ul .checked:hover:after {
+    content: " (supprimer)";
+    font-size: 1.1rem;
+    color: orange;
+    opacity: 0;
+}
+  
+@keyframes pseudoClassAnim {
+    to {
+      opacity: 1;
+    }
+}
+
+
+/* BOUTON DARK MODE */
+.toggle{
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+.checkbox{
+  /* On fait disparaître la case avec le check, bien que le l'option de check est tjrs valable */
+  display: none; 
+}
+.label{
+/* C'est qui englobe les 2 icones */
+height: 26px;
+width: 50px;
+background: rgb(182, 182, 182);
+padding: 5px 8px;
+border-radius: 50px;
+/* "cursor: pointer" sert au moment du survol */
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: space-between;
+/* "position: relative" va permettre de bouger les icones à l'intérieur */
+position: relative;
+transform: scale(1.2);
+box-shadow: 2px 1px 1px#333;
+}
+.label .ball{
+  background: #eee;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  /* "position: absolute" permet a ball de prendre correctement sa place */
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  transform: translateX(0px);
+  transition: transform 0.4s cubic-bezier(.42, -1.12, .35, 1.78);
+}
+.checkbox:checked + .label .ball{
+/* Là on dit que quand la checkbox est checké on agit sur le label et sur le ball (la boule qui est dans le label*/
+  transform: translateX(29px);
+}
+.fa-moon{
+  color: #333;
+}
+
+/* DARK MODE */
+.dark{
+  background: linear-gradient(125deg, white, black 100%)
+}
+.dark .container {
+  background: linear-gradient(125deg, white, #333 100%);
+}
+.dark li::before{
+  color: #09fbba;
+  transition: 1s;
+}
+.dark li{
+  color: white;
+  transition: 0.7s;
+}
+.dark form input::placeholder{
+  color: #09fbba;
+  transition: 0.7s;
+}
+.dark p{
+  color: white;
+  transition: 1s;
+}
+.dark ul li:hover:after{
+  color: #09fbba;
+}
+.dark ul .checked:hover:after{
+  color: #09fbba;
+}
+.dark main{
+  background: #09fbba;
+}
+.dark .label{
+  box-shadow: 2px 1px 1px #09fbba;
+  background: #888;
+}
+.dark .ball{
+  background: #09fbba;
+}
