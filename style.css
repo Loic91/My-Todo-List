@@ -144,6 +144,10 @@ box-shadow: 2px 1px 1px#333;
   color: #09fbba;
   transition: 1s;
 }
+.dark ul .checked:before{
+  color: #09fbba;
+  transition: 1s;
+}
 .dark li{
   color: white;
   transition: 0.7s;
