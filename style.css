@@ -172,3 +172,16 @@ box-shadow: 2px 1px 1px#333;
 .dark .ball{
   background: #09fbba;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 500px){
+  .container{
+    width: 250px; 
+  }
+  form input{
+    width: 200px;
+  }
+  ul li{
+    margin-left: -50px;
+  }
+}
